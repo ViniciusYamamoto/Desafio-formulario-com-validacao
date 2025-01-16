@@ -1,38 +1,53 @@
-function linhaCor() {
-    let input = document.querySelectorAll('.dados');
+// function linhaCor() {
+//     let input = document.querySelectorAll('.dados');
 
-    console.log(input);
+//     console.log(input);
 
-    let primeiroDado = input[0];
-    primeiroDado.style.border = '2px solid green';
+//     let primeiroDado = input[0];
+//     primeiroDado.style.border = '2px solid green';
+// }
+
+// function linhaCor1() {
+//     let input = document.querySelectorAll('.dados');
+
+//     console.log(input);
+
+//     let segundoDado = input[1];
+//     segundoDado.style.border = '2px solid green';
+// }
+
+// function linhaCor2() {
+//     let input = document.querySelectorAll('.dados');
+
+//     console.log(input);
+
+//     let terceiroDado = input[2];
+//     terceiroDado.style.border = '2px solid green';
+// }
+
+// function linhaCor3() {
+//     let input = document.querySelectorAll('.dados');
+
+//     console.log(input);
+
+//     let quartoDado = input[3];
+//     quartoDado.style.border = '2px solid green';
+// }
+
+const campoSelecionado = document.querySelectorAll('.dados');
+console.log(campoSelecionado)
+
+function bordaSelecionada(event) {
+    campoSelecionado.forEach((borda) => {
+        borda.classList.remove('bordaVerificacao');
+    });
+    event.currentTarget.classList.add('bordaVerificacao');
 }
 
-function linhaCor1() {
-    let input = document.querySelectorAll('.dados');
+campoSelecionado.forEach((borda) => {
+    borda.addEventListener('onchange', bordaSelecionada);
+})
 
-    console.log(input);
-
-    let segundoDado = input[1];
-    segundoDado.style.border = '2px solid green';
-}
-
-function linhaCor2() {
-    let input = document.querySelectorAll('.dados');
-
-    console.log(input);
-
-    let terceiroDado = input[2];
-    terceiroDado.style.border = '2px solid green';
-}
-
-function linhaCor3() {
-    let input = document.querySelectorAll('.dados');
-
-    console.log(input);
-
-    let quartoDado = input[3];
-    quartoDado.style.border = '2px solid green';
-}
 
 function enviar() {
     let enviaDados = document.getElementById('botao');
